@@ -1,5 +1,5 @@
 {
-  "name": "html-sketchapp-cli",
+  "name": "@iamstarkov/html-sketchapp-cli",
   "version": "0.2.0",
   "description": "Quickly generate Sketch libraries from HTML documents and living style guides, powered by html-sketchapp",
   "main": "index.js",
