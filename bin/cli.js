@@ -87,8 +87,6 @@ require('yargs')
           const bundle = await readFileAsync(bundlePath, 'utf8');
           await page.addScriptTag({ content: bundle });
 
-          await page.evaluate('generateAlmostSketch.setupSymbols({ name: "html-sketchapp symbols" })');
-
           await page.evaluate('generateAlmostSketch.snapshotColorStyles()');
 
           const viewports = argv.viewports || { Desktop: '1024x768' };
@@ -132,7 +130,7 @@ require('yargs')
     }
   })
   .command('install', 'Install the html-sketchapp Sketch plugin', {}, () => {
-    const htmlSketchappPath = path.dirname(require.resolve('@brainly/html-sketchapp/package.json'));
+    const htmlSketchappPath = path.dirname(require.resolve('@iamstarkov/html-sketchapp/package.json'));
     const pluginPath = path.resolve(htmlSketchappPath, 'asketch2sketch.sketchplugin');
 
     const opn = require('opn');

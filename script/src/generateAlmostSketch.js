@@ -1,8 +1,8 @@
-import Page from '@brainly/html-sketchapp/html2asketch/page.js';
-import Document from '@brainly/html-sketchapp/html2asketch/document.js';
-import Text from '@brainly/html-sketchapp/html2asketch/text.js';
-import SymbolMaster from '@brainly/html-sketchapp/html2asketch/symbolMaster.js';
-import nodeToSketchLayers from '@brainly/html-sketchapp/html2asketch/nodeToSketchLayers.js';
+import Page from '@iamstarkov/html-sketchapp/html2asketch/page.js';
+import Document from '@iamstarkov/html-sketchapp/html2asketch/document.js';
+import Text from '@iamstarkov/html-sketchapp/html2asketch/text.js';
+import SymbolMaster from '@iamstarkov/html-sketchapp/html2asketch/symbolMaster.js';
+import nodeToSketchLayers from '@iamstarkov/html-sketchapp/html2asketch/nodeToSketchLayers.js';
 
 const getAllLayers = async item => {
   const itemAndChildren = [item, ...item.querySelectorAll('*')];
@@ -15,7 +15,7 @@ const getAllLayers = async item => {
   return layers.reduce((prev, current) => prev.concat(current), []);
 };
 
-const doc = new Document();
+const doc = new Document({ id: 'UI kit' });
 
 export function snapshotColorStyles() {
   Array.from(document.querySelectorAll('[data-sketch-color]'))
@@ -48,12 +48,9 @@ export function getDocumentJSON() {
 
 const page = new Page({
   width: document.body.offsetWidth,
-  height: document.body.offsetHeight
+  height: document.body.offsetHeight,
+  id: 'Page',
 });
-
-export function setupSymbols({ name }) {
-  page.setName(name);
-}
 
 export async function snapshotSymbols({ suffix = '' }) {
   const symbolPromises = Array.from(document.querySelectorAll('[data-sketch-symbol]'))

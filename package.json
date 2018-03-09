@@ -1,6 +1,6 @@
 {
   "name": "html-sketchapp-cli",
-  "version": "0.0.0-development",
+  "version": "0.2.0",
   "description": "Quickly generate Sketch libraries from HTML documents and living style guides, powered by html-sketchapp",
   "main": "index.js",
   "engines": {
@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/seek-oss/html-sketchapp-cli#readme",
   "dependencies": {
-    "@brainly/html-sketchapp": "^1.0.0",
+    "@iamstarkov/html-sketchapp": "^1.0.0",
     "es6-promisify": "^6.0.0",
     "find-up": "^2.1.0",
     "get-port": "^3.2.0",
